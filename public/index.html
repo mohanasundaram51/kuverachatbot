@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HDFC Mutual Fund - Facts Assistant</title>
+<style>
+  :root {
+    --bg: #faf9f6;
+    --text: #1c1c1a;
+    --muted: #6b6a66;
+    --line: #e4e2dc;
+    --accent: #3f5f6f;
+    --bubble: #f0eee9;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: 640px; margin: 0 auto; padding: 40px 16px 56px; }
+  h1 { font-size: 1.45rem; font-weight: 600; margin: 0; }
+  .sub { color: var(--muted); font-size: 0.85rem; margin: 2px 0 20px; }
+  .welcome { margin: 0 0 16px; }
+  .disclaimer {
+    border-left: 3px solid var(--accent);
+    background: #fff;
+    padding: 12px 14px;
+    font-size: 0.88rem;
+    margin: 0 0 20px;
+  }
+  .disclaimer strong { display: block; margin-bottom: 4px; }
+  .examples { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+  button {
+    font: inherit;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  .examples button {
+    text-align: left;
+    background: #fff;
+    color: var(--accent);
+    border: 1px solid var(--line);
+    padding: 9px 12px;
+    font-size: 0.92rem;
+  }
+  .examples button:hover { border-color: var(--accent); }
+  button:disabled { opacity: 0.5; cursor: default; }
+  #chat { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; }
+  .msg { padding: 10px 14px; border-radius: 8px; max-width: 90%; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .user { align-self: flex-end; background: var(--accent); color: #fff; }
+  .user.removed { background: var(--bubble); color: var(--muted); font-style: italic; }
+  .bot { align-self: flex-start; background: #fff; border: 1px solid var(--line); }
+  .bot .source { margin-top: 8px; font-size: 0.88rem; }
+  .bot .source a { color: var(--accent); }
+  .bot .date { margin-top: 2px; font-size: 0.78rem; color: var(--muted); }
+  .bot.waiting { color: var(--muted); }
+  form { display: flex; gap: 8px; }
+  input {
+    flex: 1;
+    min-width: 0;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+  }
+  input:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  form button { background: var(--accent); color: #fff; border: 0; padding: 10px 18px; }
+  .sources { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; font-size: 0.85rem; }
+  .sources h2 { font-size: 0.95rem; font-weight: 600; margin: 0 0 8px; }
+  .sources ul { margin: 0; padding-left: 18px; }
+  .sources li { margin-bottom: 4px; }
+  .sources a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>HDFC Mutual Fund - Facts Assistant</h1>
+  <p class="sub">for Kuvera users</p>
+
+  <p class="welcome">Ask me factual questions about HDFC Large Cap, Small Cap and ELSS Tax Saver funds.</p>
+
+  <div class="disclaimer">
+    <strong>Facts-only. No investment advice.</strong>
+    This assistant shares factual information about selected HDFC Mutual Fund schemes using official public sources (HDFC Mutual Fund, AMFI, SEBI). It does not recommend, compare, or predict returns. Mutual fund investments are subject to market risks; read all scheme-related documents carefully.
+  </div>
+
+  <div class="examples">
+    <button type="button">What is the exit load of HDFC Small Cap Fund?</button>
+    <button type="button">What is the lock-in period of HDFC ELSS Tax Saver?</button>
+    <button type="button">How do I download my capital gains statement?</button>
+  </div>
+
+  <div id="chat" aria-live="polite"></div>
+
+  <form id="ask-form">
+    <input id="question" type="text" placeholder="Type your question" autocomplete="off" aria-label="Your question">
+    <button type="submit">Ask</button>
+  </form>
+
+  <section class="sources">
+    <h2>Sources used</h2>
+    <ul>
+      <li><a href="https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Large%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf?VersionId=XuOtUPPEfOmbQpuzxBMGCAdqsTmowMh4" target="_blank" rel="noopener">HDFC Large Cap Fund - Key Information Memorandum</a></li>
+      <li><a href="https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Small%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf?VersionId=pPEndNLX7BQsCy41dKIvauo_DlRvI59A" target="_blank" rel="noopener">HDFC Small Cap Fund - Key Information Memorandum</a></li>
+      <li><a href="https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20ELSS%20Tax%20Saver%20dated%20November%2021%2C%202025_0.pdf?VersionId=CWvBjiK_hIuApMLzaZJVRt17Sc6tmlog" target="_blank" rel="noopener">HDFC ELSS Tax Saver - Key Information Memorandum</a></li>
+      <li><a href="https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20Large%20Cap%20Fund_July%2026.pdf" target="_blank" rel="noopener">HDFC Large Cap Fund - Fund Facts</a></li>
+      <li><a href="https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20Small%20Cap%20Fund_July%2026.pdf" target="_blank" rel="noopener">HDFC Small Cap Fund - Fund Facts</a></li>
+      <li><a href="https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20TaxSaver%20Fund_July%2026.pdf" target="_blank" rel="noopener">HDFC ELSS Tax Saver - Fund Facts</a></li>
+      <li><a href="https://www.hdfcfund.com/mutual-funds/factsheets" target="_blank" rel="noopener">HDFC Mutual Fund - Factsheets</a></li>
+      <li><a href="https://www.hdfcfund.com/services/faqs" target="_blank" rel="noopener">HDFC Mutual Fund - FAQs</a></li>
+    </ul>
+  </section>
+</main>
+
+<script>
+  // This page only sends the question and prints the reply.
+  // All checks, search and AI calls happen in the backend (/api/ask).
+  // Chat history lives only in this page's memory; refreshing clears it.
+
+  const chat = document.getElementById("chat");
+  const form = document.getElementById("ask-form");
+  const input = document.getElementById("question");
+  const buttons = document.querySelectorAll("button");
+
+  function addMessage(className, text) {
+    const div = document.createElement("div");
+    div.className = "msg " + className;
+    div.textContent = text;
+    chat.appendChild(div);
+    div.scrollIntoView({ block: "end", behavior: "smooth" });
+    return div;
+  }
+
+  function showReply(div, reply) {
+    div.className = "msg bot";
+    div.textContent = reply.answer;
+    if (reply.source_url) {
+      const source = document.createElement("div");
+      source.className = "source";
+      const link = document.createElement("a");
+      link.href = reply.source_url;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.textContent = reply.source_url;
+      source.append("Source: ", link);
+      div.appendChild(source);
+    }
+    if (reply.last_updated) {
+      const date = document.createElement("div");
+      date.className = "date";
+      date.textContent = "Last updated from sources: " + reply.last_updated;
+      div.appendChild(date);
+    }
+  }
+
+  async function ask(question) {
+    const userDiv = addMessage("user", question);
+    const botDiv = addMessage("bot waiting", "Looking this up…");
+    buttons.forEach(b => (b.disabled = true));
+    try {
+      const response = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: question }),
+      });
+      const reply = await response.json();
+      if (reply.type === "pii") {
+        userDiv.textContent = "[message removed: contained personal information]";
+        userDiv.classList.add("removed");
+      }
+      showReply(botDiv, response.ok ? reply : { answer: reply.detail });
+    } catch (err) {
+      showReply(botDiv, { answer: "Sorry, something went wrong. Please try again." });
+    }
+    buttons.forEach(b => (b.disabled = false));
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+    const question = input.value;
+    input.value = "";
+    ask(question);
+  });
+
+  document.querySelectorAll(".examples button").forEach(button => {
+    button.addEventListener("click", () => ask(button.textContent));
+  });
+</script>
+</body>
+</html>

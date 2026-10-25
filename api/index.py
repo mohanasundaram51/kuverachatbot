@@ -4,6 +4,7 @@ import sys
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
 # pipeline.py, guardrails.py etc. live one folder up from api/
@@ -18,6 +19,12 @@ app = FastAPI(title="HDFC MF Facts Assistant")
 
 class AskRequest(BaseModel):
     question: str = ""
+
+
+@app.get("/", include_in_schema=False)
+def chat_page():
+    # Local use only. On Vercel, vercel.json serves public/index.html at "/".
+    return FileResponse(Path(__file__).resolve().parent.parent / "public" / "index.html")
 
 
 @app.get("/api/health")
