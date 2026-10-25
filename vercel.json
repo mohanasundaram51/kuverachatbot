@@ -1,0 +1,12 @@
+{
+  "outputDirectory": "public",
+  "functions": {
+    "api/index.py": {
+      "includeFiles": "{data/corpus.json,prompts.py,pipeline.py,guardrails.py,retriever.py,sources.csv}"
+    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/index" },
+    { "source": "/", "destination": "/index.html" }
+  ]
+}
