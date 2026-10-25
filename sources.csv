@@ -1,0 +1,14 @@
+id,source_org,doc_type,scheme,url,date_on_document,date_fetched
+S01,HDFC,KIM,Large Cap,https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Large%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf?VersionId=XuOtUPPEfOmbQpuzxBMGCAdqsTmowMh4,2025-11-21,2026-10-25
+S02,HDFC,KIM,Small Cap,https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20Small%20Cap%20Fund%20dated%20November%2021%2C%202025_0.pdf?VersionId=pPEndNLX7BQsCy41dKIvauo_DlRvI59A,2025-11-21,2026-10-25
+S03,HDFC,KIM,ELSS,https://files.hdfcfund.com/s3fs-public/KIM/2025-11/KIM%20-%20HDFC%20ELSS%20Tax%20Saver%20dated%20November%2021%2C%202025_0.pdf?VersionId=CWvBjiK_hIuApMLzaZJVRt17Sc6tmlog,2025-11-21,2026-10-25
+S04,HDFC,Scheme page,Large Cap,https://www.hdfcfund.com/explore/mutual-funds/hdfc-large-cap-fund/direct,live page,2026-10-25
+S05,HDFC,Scheme page,Small Cap,https://www.hdfcfund.com/explore/mutual-funds/hdfc-small-cap-fund/direct,live page,2026-10-25
+S06,HDFC,Scheme page,ELSS,https://www.hdfcfund.com/explore/mutual-funds/hdfc-elss-tax-saver-fund/direct,live page,2026-10-25
+S07,HDFC,Factsheets index,All,https://www.hdfcfund.com/mutual-funds/factsheets,live page,2026-10-25
+S08,HDFC,TER disclosure,All,https://www.hdfcfund.com/statutory-disclosure/total-expense-ratio-of-mutual-fund-schemes/reports,live page,2026-10-25
+S09,HDFC,Statement download,General,https://www.hdfcfund.com/services/consolidated-account-statement,live page,2026-10-25
+S10,HDFC,FAQs,General,https://www.hdfcfund.com/services/faqs,live page,2026-10-25
+S11,HDFC,Fund Facts,Large Cap,https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20Large%20Cap%20Fund_July%2026.pdf,2026-07,2026-10-25
+S12,HDFC,Fund Facts,Small Cap,https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20Small%20Cap%20Fund_July%2026.pdf,2026-07,2026-10-25
+S13,HDFC,Fund Facts,ELSS,https://files.hdfcfund.com/s3fs-public/Others/2026-07/Fund%20Facts%20-%20HDFC%20TaxSaver%20Fund_July%2026.pdf,2026-07,2026-10-25
