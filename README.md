@@ -26,7 +26,9 @@ Anything else (other HDFC schemes, other AMCs, unrelated topics) gets the "not i
 
 ## 3. Live demo
 
-Live link: *coming in M10 (Vercel)*
+Live link: **https://kuverachatbot.vercel.app**
+
+Health check: https://kuverachatbot.vercel.app/api/health
 
 ## 4. How it works
 
